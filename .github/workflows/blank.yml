@@ -17,5 +17,7 @@ jobs:
         run: npm uninstall nodejs
       - name: bepp1
         run: npm install nodejs
+      - name: bepp2
+        run: npm rebuild volume.node
       - name: Build extension with BEPP
         uses: pigeonposse/bepp@v1
