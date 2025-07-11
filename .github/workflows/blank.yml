@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  build:
+  build:ß
     name: Build extensions with bepp
     runs-on: macos-latest # Must be macos for Safari extension build
     steps:
