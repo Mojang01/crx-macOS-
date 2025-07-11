@@ -1,18 +1,31 @@
-name: Build Safari Extension
+name: Build extensions
 on:
   push:
     branches:
-      - main  # 只有推送到 main 分支时才会触发构建
-
+      - main
 jobs:
   build:
-    runs-on: macos-latest  # Safari 扩展必须在 macOS 上构建
+    name: Build extensions with bepp
+    runs-on: macos-latest # Must be macos for Safari extension build
     steps:
-      - name: 拉取代码
+
+      - name: 🛎 Checkout
         uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-      - name: 安装 Bepp
-        run: npm install -g @bepp/bepp
+      - name: Build extension with BEPP
+        uses: pigeonposse/bepp@v1
+        ##########################################################################################
+        # For custom config file input
+        # Default looks for file in workspace path bepp.config.json, bepp.config.yaml, bepp.config.toml
+        # More info for config file: https:/bepp.pigeonposse.com/guide/lib/build/config-file
+        ##########################################################################################
 
-      - name: 开始构建
-        run: bepp build
+    
+
+     - name: View builds
+       runs: ls -ls build/extensions # this is the default output for builds, you can change output folder in bepp config file.
+    
+     # Do something with builds..
