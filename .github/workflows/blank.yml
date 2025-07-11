@@ -4,8 +4,8 @@ on:
     branches:
       - main
 jobs:
-  build:ß
-    name: Build extensions with bepp
+  build:
+    name: notab
     runs-on: macos-latest # Must be macos for Safari extension build
     steps:
 
