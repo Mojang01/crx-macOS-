@@ -14,5 +14,5 @@ jobs:
       - name: 安装 Bepp
         run: npm install -g @bepp/bepp
 
-      - name: 开始构建
-        run: bepp build
+      - name: Build extension with BEPP
+        uses: pigeonposse/bepp@v1
